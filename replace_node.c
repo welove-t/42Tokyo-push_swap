@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 15:54:04 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/09 15:22:05 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/10 11:48:59 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,15 @@ void	push(t_stack *pre_list, t_stack *new_list)
 		tmp = pre_list->head->next;
 		pre_list->head->next = new_list;
 		pre_list = tmp;
+	}
+}
+
+void	rotate(t_stack *list)
+{
+	if (list != NULL)
+	{
+		last_list(list->head)->next = list->head;
+		list->head = list->head->next;
+		list->head->next = NULL;
 	}
 }
