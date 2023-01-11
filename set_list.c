@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   linked_list.c                                      :+:      :+:    :+:   */
+/*   set_list.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 12:40:25 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/11 12:12:31 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/11 15:32:42 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,17 @@ void	list_add(t_stack *list, const int num)
 {
 	t_node	*new;
 
+	new = alloc_node();
 	if (list == NULL || list->head == NULL)
 	{
-		new = alloc_node();
 		set_node(new, num, NULL, NULL);
 		list->head = new;
 		list->tail = new;
 	}
 	else
 	{
-		new = list->tail;
-		new->next = alloc_node();
-		set_node(new->next, num, list->tail, NULL);
-		list->tail = new->next;
+		set_node(new, num, list->tail, NULL);
+		list->tail->next = new;
+		list->tail = new;
 	}
 }
