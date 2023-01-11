@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/09 14:29:55 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/11 15:39:14 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int argc, char **argv)
 	init_list(&a_list);
 	while (i < argc)
 	{
-		insert_back(&a_list, ft_atoi(argv[i]));
+		list_add(&a_list, ft_atoi(argv[i]));
 		i++;
 	}
 
@@ -31,13 +31,19 @@ int	main(int argc, char **argv)
 	// print
 	t_node *p;
 	printf("---print---\n");
-	swap_a(&a_list);
+	swap(&a_list);
 	p = a_list.head;
 	while (p != NULL)
 	{
+		puts("----");
+		printf("main:%p\n", p);
+		printf("prev:%p\n", p->prev);
 		printf("%d\n", p->num);
+		printf("next:%p\n", p->next);
 		p = p->next;
 	}
+	printf("head:%p\n", a_list.head);
+	printf("tail:%p\n", a_list.tail);
 	return (0);
 }
 
