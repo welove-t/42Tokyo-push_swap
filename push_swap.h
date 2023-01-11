@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/11 12:32:21 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/11 14:21:31 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,20 @@ t_node	*alloc_node(void);
 void	set_node(t_node *n, const int num, t_node *prev, t_node *next);
 void	init_list(t_stack *list);
 void	list_add(t_stack *list, const int num);
-void	swap_a(t_stack *list);
+void	swap(t_stack *list);
+void	push(t_stack *fm_list, t_stack *to_list);
+void	rotate(t_stack *list);
+void	reverse(t_stack *list);
+void	sa(t_stack *list);
+void	pa(t_stack *a_list, t_stack *b_list);
+void	ra(t_stack *a_list);
+void	rra(t_stack *a_list);
+void	sb(t_stack *b_list);
+void	pb(t_stack *a_list, t_stack *b_list);
+void	rb(t_stack *b_list);
+void	rrb(t_stack *b_list);
+void	ss(t_stack *a_list, t_stack *b_list);
+void	rr(t_stack *a_list, t_stack *b_list);
+void	rrr(t_stack *a_list, t_stack *b_list);
 
 #endif
