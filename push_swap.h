@@ -6,14 +6,14 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/11 12:13:19 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/11 12:32:21 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "libft/libft.h"
+# include "ft_printf/ft_printf.h"
 # include <stdlib.h>
 
 typedef struct s_node
