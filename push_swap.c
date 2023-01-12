@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/11 15:39:14 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/12 12:14:17 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,18 @@ int	main(int argc, char **argv)
 		i++;
 	}
 
+	if (argc <= 2)
+		return 0;
+	else if (argc == 3)
+		short_sort2(&a_list);
+	else if (argc == 4)
+		short_sort3(&a_list);
+	else
+		return 0;
 
 	// print
 	t_node *p;
 	printf("---print---\n");
-	swap(&a_list);
 	p = a_list.head;
 	while (p != NULL)
 	{
