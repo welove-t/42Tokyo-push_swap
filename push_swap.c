@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/13 11:51:04 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/13 14:11:05 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,17 +26,14 @@ int	main(int argc, char **argv)
 	i_arg = (int *)malloc(sizeof(int) * (argc - 1));
 	for (int j = 1; j < argc; j++)
 		i_arg[j - 1] = ft_atoi(argv[j]);
-	// for (int j = 0; j < argc - 1; j++)
-	// 	ft_printf("%d\n",i_arg[j]);
 	hashes = compression(i_arg, argc - 1);
-	// for (int j = 0; j < argc - 1; j++)
-	// {
-	// 	ft_printf("ok\n");
-	// 	printf("main_num:%d\n", hashes->main_num);
-	// 	ft_printf("aa\n");
-	// 	printf("hash_num:%d\n", hashes[j].hash_num);
-	// 	printf("idx:%d\n", hashes[j].idx);
-	// }
+	for (int j = 0; j < argc - 1; j++)
+	{
+		printf("main_num:%d\n", hashes[j].main_num);
+		printf("hash_num:%d\n", hashes[j].hash_num);
+		printf("idx:%d\n", hashes[j].idx);
+		puts("========");
+	}
 	while (i < argc)
 	{
 		list_add(&a_list, ft_atoi(argv[i]));

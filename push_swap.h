@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/12 15:10:05 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/14 08:49:46 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,9 @@ typedef struct s_hashmap
 
 t_hashmap	*compression(int *num, int cnt);
 void		set_num(t_hashmap *hashmap, int *num, int cnt);
-void		set_hash_num(t_hashmap *hashmap, int i);
-void		swap_hash_value(t_hashmap *hashmap, int j);
-void		bubble_sort(t_hashmap *hashmap, int cnt);
+void		set_hash(t_hashmap *hashmap, int cnt);
+void		reverse_sort(t_hashmap *hashmap, int cnt);
+void		swap_val(t_hashmap *hashmap, int i, int j, int flg);
 t_node		*alloc_node(void);
 void		set_node(t_node *n, const int num, t_node *prev, t_node *next);
 void		init_list(t_stack *list);
