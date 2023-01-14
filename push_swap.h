@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/14 09:22:33 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/14 13:11:14 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,11 @@ void		short_sort3(t_stack *a_list);
 void		short_sort3_head_sm(t_stack *a_list);
 void		short_sort3_head_md(t_stack *a_list);
 void		short_sort3_head_lg(t_stack *a_list);
+void		sort_normal(t_stack *a_list, int size);
+void		create_blist(t_stack *b_list);
+void		pushes(t_stack *a_list, t_stack *b_list, const int size);
+void		judge_order(t_stack *a_list, t_stack *b_list, int i_search_hash);
+void		loop_rotate(t_stack *a_list, int i_hash, int flg);
 void		swap(t_stack *list);
 void		push(t_stack *fm_list, t_stack *to_list);
 void		rotate(t_stack *list);

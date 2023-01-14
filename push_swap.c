@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/14 09:27:37 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/14 12:50:39 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,8 @@ int	main(int argc, char **argv)
 		short_sort2(&a_list);
 	else if (argc == 4)
 		short_sort3(&a_list);
+	else if (argc <= 7)
+		sort_normal(&a_list, a_list.size);
 	else
 		return 0;
 

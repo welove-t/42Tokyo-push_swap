@@ -6,7 +6,7 @@
 #    By: terabu <terabu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 11:27:29 by terabu            #+#    #+#              #
-#    Updated: 2023/01/12 15:14:30 by terabu           ###   ########.fr        #
+#    Updated: 2023/01/14 10:19:12 by terabu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,6 +19,7 @@ SRCS := push_swap.c \
 		order_d.c \
 		set_list.c \
 		sort_short.c \
+		sort_normal.c \
 		compression.c \
 		replace_node.c
 OBJS := $(SRCS:.c=.o)
