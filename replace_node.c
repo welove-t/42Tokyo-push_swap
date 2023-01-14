@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 15:54:04 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/14 09:51:59 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/14 15:31:56 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	reverse(t_stack *list)
 
 	if (list != NULL)
 	{
-		tmp = list->head->next;
+		tmp = list->tail->prev;
 		list->tail->prev->next = NULL;
 		list->head->prev = list->tail;
 		list->tail->next = list->head;
