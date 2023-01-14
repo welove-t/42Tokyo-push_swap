@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/13 14:11:05 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/14 09:04:02 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	main(int argc, char **argv)
 	t_stack	a_list;
 	t_hashmap	*hashes;
 
-	i = 1;
 	init_list(&a_list);
 	i_arg = (int *)malloc(sizeof(int) * (argc - 1));
 	for (int j = 1; j < argc; j++)
@@ -34,9 +33,10 @@ int	main(int argc, char **argv)
 		printf("idx:%d\n", hashes[j].idx);
 		puts("========");
 	}
-	while (i < argc)
+	i = 0;
+	while (i < argc - 1)
 	{
-		list_add(&a_list, ft_atoi(argv[i]));
+		list_add(&a_list, hashes[i].hash_num);
 		i++;
 	}
 
@@ -58,7 +58,12 @@ int	main(int argc, char **argv)
 		puts("----");
 		printf("main:%p\n", p);
 		printf("prev:%p\n", p->prev);
-		printf("%d\n", p->num);
+		printf("hash:%d\n", p->num);
+		for (int z = 0; z < argc - 1; z++)
+		{
+			if (p->num == hashes[z].hash_num)
+				printf("%d\n", hashes[z].main_num);
+		}
 		printf("next:%p\n", p->next);
 		p = p->next;
 	}
