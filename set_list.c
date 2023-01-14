@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 12:40:25 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/14 09:16:58 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/14 09:24:08 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ void	init_list(t_stack *list)
 {
 	list->head = NULL;
 	list->tail = NULL;
+	list->size = 0;
 }
 
 void	list_add(t_stack *list, t_hashmap hash_val)
@@ -42,11 +43,13 @@ void	list_add(t_stack *list, t_hashmap hash_val)
 		set_node(new, hash_val, NULL, NULL);
 		list->head = new;
 		list->tail = new;
+		list->size += 1;
 	}
 	else
 	{
 		set_node(new, hash_val, list->tail, NULL);
 		list->tail->next = new;
 		list->tail = new;
+		list->size += 1;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/14 09:18:06 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/14 09:27:37 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int	main(int argc, char **argv)
 	}
 	printf("head:%p\n", a_list.head);
 	printf("tail:%p\n", a_list.tail);
+	printf("size:%d\n",a_list.size);
 	return (0);
 }
 

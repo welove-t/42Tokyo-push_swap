@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/14 09:17:20 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/14 09:22:33 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ typedef struct s_stack
 {
 	t_node	*head;
 	t_node	*tail;
+	int		size;
 }	t_stack;
 
 typedef struct s_hashmap
