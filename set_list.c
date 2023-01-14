@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 12:40:25 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/11 15:32:42 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/14 09:16:58 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ t_node	*alloc_node(void)
 	return ((t_node *)malloc(sizeof(t_node)));
 }
 
-void	set_node(t_node *n, const int num, t_node *prev, t_node *next)
+void	set_node(t_node *n, t_hashmap hash_val, t_node *prev, t_node *next)
 {
-	n->num = num;
+	n->num = hash_val.main_num;
+	n->hash = hash_val.hash_num;
 	n->prev = prev;
 	n->next = next;
 }
@@ -31,20 +32,20 @@ void	init_list(t_stack *list)
 	list->tail = NULL;
 }
 
-void	list_add(t_stack *list, const int num)
+void	list_add(t_stack *list, t_hashmap hash_val)
 {
 	t_node	*new;
 
 	new = alloc_node();
 	if (list == NULL || list->head == NULL)
 	{
-		set_node(new, num, NULL, NULL);
+		set_node(new, hash_val, NULL, NULL);
 		list->head = new;
 		list->tail = new;
 	}
 	else
 	{
-		set_node(new, num, list->tail, NULL);
+		set_node(new, hash_val, list->tail, NULL);
 		list->tail->next = new;
 		list->tail = new;
 	}

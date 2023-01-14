@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/14 09:04:02 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/14 09:18:06 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 	i = 0;
 	while (i < argc - 1)
 	{
-		list_add(&a_list, hashes[i].hash_num);
+		list_add(&a_list, hashes[i]);
 		i++;
 	}
 
@@ -58,12 +58,8 @@ int	main(int argc, char **argv)
 		puts("----");
 		printf("main:%p\n", p);
 		printf("prev:%p\n", p->prev);
-		printf("hash:%d\n", p->num);
-		for (int z = 0; z < argc - 1; z++)
-		{
-			if (p->num == hashes[z].hash_num)
-				printf("%d\n", hashes[z].main_num);
-		}
+		printf("hash:%d\n", p->hash);
+		printf("%d\n", p->num);
 		printf("next:%p\n", p->next);
 		p = p->next;
 	}
