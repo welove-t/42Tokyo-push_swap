@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 15:54:04 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/14 09:26:12 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/14 09:51:59 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ void	swap(t_stack *list)
 		tmp = list->head->num;
 		list->head->num = list->head->next->num;
 		list->head->next->num = tmp;
+		tmp = list->head->hash;
+		list->head->hash = list->head->next->hash;
+		list->head->next->hash = tmp;
 	}
 }
 
