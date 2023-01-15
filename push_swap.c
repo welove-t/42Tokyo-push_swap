@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/15 12:02:15 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/15 12:33:04 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 	else if (argc <= 7)
 		sort_normal(&a_list, &b_list, a_list.size);
 	else
-		return 0;
+		sort_quick_a(&a_list, &b_list, a_list.size);
 
 	// print
 	t_node *p;
