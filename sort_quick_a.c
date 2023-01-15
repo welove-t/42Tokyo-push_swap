@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 11:16:32 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/15 14:33:49 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/16 06:39:46 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,10 +26,10 @@ void	sort_quick_a(t_stack *a_list, t_stack *b_list, int max)
 		else
 			ra(a_list);
 	}
-	move_btoa(a_list, b_list, cnt_bpush);
+	move_btoa_head(a_list, b_list, cnt_bpush);
 }
 
-void	move_btoa(t_stack *a_list, t_stack *b_list, int max)
+void	move_btoa_head(t_stack *a_list, t_stack *b_list, int max)
 {
 	int		cnt_apush;
 	t_node	*i_blist;
