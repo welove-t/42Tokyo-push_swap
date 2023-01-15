@@ -6,32 +6,19 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 09:56:12 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/14 16:37:36 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/15 11:59:44 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-void	sort_normal(t_stack *a_list, int size)
+void	sort_normal(t_stack *a_list, t_stack *b_list, int a_size)
 {
-	t_stack	b_list;
-
-	create_blist(&b_list);
-	pushes(a_list, &b_list, size);
+	pushes(a_list, b_list, a_size);
 	short_sort3(a_list);
-	while (b_list.size != 0)
-		pa(a_list, &b_list);
-}
-
-void	create_blist(t_stack *b_list)
-{
-	t_node	*node;
-
-	init_list(b_list);
-	node = alloc_node();
-	b_list->head = node;
-	b_list->tail = node;
+	while (b_list->size != 0)
+		pa(a_list, b_list);
 }
 
 void	pushes(t_stack *a_list, t_stack *b_list, int a_cnt)

@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/14 13:11:14 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/15 12:02:02 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,14 +46,14 @@ void		swap_val(t_hashmap *hashmap, int i, int j, int flg);
 t_node		*alloc_node(void);
 void		set_node(t_node *n, t_hashmap hash_val, t_node *prev, t_node *next);
 void		init_list(t_stack *list);
+void		create_blist(t_stack *b_list);
 void		list_add(t_stack *list, t_hashmap hash_val);
 void		short_sort2(t_stack *a_list);
 void		short_sort3(t_stack *a_list);
 void		short_sort3_head_sm(t_stack *a_list);
 void		short_sort3_head_md(t_stack *a_list);
 void		short_sort3_head_lg(t_stack *a_list);
-void		sort_normal(t_stack *a_list, int size);
-void		create_blist(t_stack *b_list);
+void		sort_normal(t_stack *a_list, t_stack *b_list, int a_size);
 void		pushes(t_stack *a_list, t_stack *b_list, const int size);
 void		judge_order(t_stack *a_list, t_stack *b_list, int i_search_hash);
 void		loop_rotate(t_stack *a_list, int i_hash, int flg);

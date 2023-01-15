@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/14 12:50:39 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/15 12:02:15 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ int	main(int argc, char **argv)
 	int		i;
 	int		*i_arg;
 	t_stack	a_list;
+	t_stack	b_list;
 	t_hashmap	*hashes;
 
 	init_list(&a_list);
+	create_blist(&b_list);
 	i_arg = (int *)malloc(sizeof(int) * (argc - 1));
 	for (int j = 1; j < argc; j++)
 		i_arg[j - 1] = ft_atoi(argv[j]);
@@ -47,7 +49,7 @@ int	main(int argc, char **argv)
 	else if (argc == 4)
 		short_sort3(&a_list);
 	else if (argc <= 7)
-		sort_normal(&a_list, a_list.size);
+		sort_normal(&a_list, &b_list, a_list.size);
 	else
 		return 0;
 

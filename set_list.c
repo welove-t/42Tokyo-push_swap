@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 12:40:25 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/14 09:24:08 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/15 11:58:06 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,16 @@ void	init_list(t_stack *list)
 	list->head = NULL;
 	list->tail = NULL;
 	list->size = 0;
+}
+
+void	create_blist(t_stack *b_list)
+{
+	t_node	*node;
+
+	init_list(b_list);
+	node = alloc_node();
+	b_list->head = node;
+	b_list->tail = node;
 }
 
 void	list_add(t_stack *list, t_hashmap hash_val)
