@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/15 12:33:04 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/15 13:57:56 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ int	main(int argc, char **argv)
 
 	// print
 	t_node *p;
-	printf("---print---\n");
+	printf("===========a_list===========\n");
 	p = a_list.head;
 	while (p != NULL)
 	{
@@ -67,9 +67,27 @@ int	main(int argc, char **argv)
 		printf("next:%p\n", p->next);
 		p = p->next;
 	}
+	puts("--a_list--");
 	printf("head:%p\n", a_list.head);
 	printf("tail:%p\n", a_list.tail);
 	printf("size:%d\n",a_list.size);
+
+	printf("===========b_list===========\n");
+	p = b_list.head;
+	while (p != NULL)
+	{
+		puts("----");
+		printf("main:%p\n", p);
+		printf("prev:%p\n", p->prev);
+		printf("hash:%d\n", p->hash);
+		printf("%d\n", p->num);
+		printf("next:%p\n", p->next);
+		p = p->next;
+	}
+	puts("--b_list--");
+	printf("head:%p\n", b_list.head);
+	printf("tail:%p\n", b_list.tail);
+	printf("size:%d\n",b_list.size);
 	return (0);
 }
 
@@ -83,5 +101,13 @@ int	main(int argc, char **argv)
 4. ソート処理
 5. 終了処理(freeなど)
 
+// テストパターン
+
+9
+./a.out 2 8 7 3 1 4 5 6 9
+
+
 */
+
+
 //
