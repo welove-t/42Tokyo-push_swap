@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 11:16:32 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/16 06:39:46 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/16 07:17:49 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,25 +32,28 @@ void	sort_quick_a(t_stack *a_list, t_stack *b_list, int max)
 void	move_btoa_head(t_stack *a_list, t_stack *b_list, int max)
 {
 	int		cnt_apush;
+	int		i;
 	t_node	*i_blist;
 
 	cnt_apush = max / 2;
-	while (b_list->size > cnt_apush)
+	i = 0;
+	while (i < cnt_apush)
 	{
 		i_blist = b_list->head;
 		if (i_blist->hash >= cnt_apush)
+		{
 			pa(a_list, b_list);
+			i++;
+		}
 		else
 			rb(b_list);
 	}
-	// if (b_list->size > 3)
-	// 	move_btoa(a_list, b_list, cnt_apush);
-	// else if (b_list->size == 3)
-	// 	short_sort3(b_list);
-	// else if (b_list->size == 2)
-	// 	short_sort2(b_list);
-	// else
-	// 	return ;
+	if (b_list->size > 3)
+		move_btoa_head(a_list, b_list, cnt_apush);
+	else if (b_list->size == 3)
+		short_sort3(b_list);
+	else if (b_list->size == 2)
+		short_sort2(b_list);
 }
 /*
 1. Aの数字をBに移動
