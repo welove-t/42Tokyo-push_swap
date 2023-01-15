@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 11:16:32 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/15 13:02:04 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/15 14:33:49 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	sort_quick_a(t_stack *a_list, t_stack *b_list, int max)
 	t_node	*i_alist;
 
 	cnt_bpush = max / 2;
-
 	while (b_list->size < cnt_bpush)
 	{
 		i_alist = a_list->head;
@@ -27,13 +26,32 @@ void	sort_quick_a(t_stack *a_list, t_stack *b_list, int max)
 		else
 			ra(a_list);
 	}
-	// move_btoa(a_list, b_list, cnt_bpush);
+	move_btoa(a_list, b_list, cnt_bpush);
 }
 
-// void	move_btoa(t_stack *a_list, t_stack *b_list, int max)
-// {
+void	move_btoa(t_stack *a_list, t_stack *b_list, int max)
+{
+	int		cnt_apush;
+	t_node	*i_blist;
 
-// }
+	cnt_apush = max / 2;
+	while (b_list->size > cnt_apush)
+	{
+		i_blist = b_list->head;
+		if (i_blist->hash >= cnt_apush)
+			pa(a_list, b_list);
+		else
+			rb(b_list);
+	}
+	// if (b_list->size > 3)
+	// 	move_btoa(a_list, b_list, cnt_apush);
+	// else if (b_list->size == 3)
+	// 	short_sort3(b_list);
+	// else if (b_list->size == 2)
+	// 	short_sort2(b_list);
+	// else
+	// 	return ;
+}
 /*
 1. Aの数字をBに移動
 	条件
