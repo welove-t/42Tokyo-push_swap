@@ -6,13 +6,13 @@
 #    By: terabu <terabu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 11:27:29 by terabu            #+#    #+#              #
-#    Updated: 2023/01/16 11:06:38 by terabu           ###   ########.fr        #
+#    Updated: 2023/01/16 15:25:18 by terabu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC := cc
 CFLAGS := -Wall -Wextra -Werror
-NAME := push_swap.a
+NAME := push_swap
 SRCS := push_swap.c \
 		order_a.c \
 		order_b.c \
@@ -26,13 +26,14 @@ SRCS := push_swap.c \
 		replace_node.c
 OBJS := $(SRCS:.c=.o)
 
-all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(MAKE) -C ./ft_printf
-	cp ft_printf/libftprintf.a $(NAME)
-	ar rcs $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) ft_printf/libftprintf.a -o $(NAME)
+# cp ft_printf/libftprintf.a $(NAME)
+# ar rcs $(NAME) $(OBJS)
 
+all: $(NAME)
 clean:
 	rm -f $(OBJS)
 	$(MAKE) -C ./ft_printf clean
