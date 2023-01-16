@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 09:56:12 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/16 08:59:19 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/16 11:08:04 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 void	sort_normal(t_stack *a_list, t_stack *b_list, int a_size)
 {
 	pushes(a_list, b_list, a_size);
-	short_sort3(a_list);
+	short_sort3_a(a_list);
 	while (b_list->size != 0)
 		pa(a_list, b_list);
 }

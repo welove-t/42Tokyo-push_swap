@@ -6,7 +6,7 @@
 #    By: terabu <terabu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 11:27:29 by terabu            #+#    #+#              #
-#    Updated: 2023/01/15 12:27:07 by terabu           ###   ########.fr        #
+#    Updated: 2023/01/16 11:06:38 by terabu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ SRCS := push_swap.c \
 		order_b.c \
 		order_d.c \
 		set_list.c \
-		sort_short.c \
+		sort_short_a.c \
+		sort_short_b.c \
 		sort_normal.c \
 		sort_quick_a.c \
 		compression.c \

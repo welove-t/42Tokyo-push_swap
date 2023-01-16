@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/16 09:58:05 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/16 11:06:13 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include "ft_printf/ft_printf.h"
 # include <stdlib.h>
+# include <stdbool.h>
 
 typedef struct s_node
 {
@@ -38,32 +39,53 @@ typedef struct s_hashmap
 	int	idx;
 }	t_hashmap;
 
+// make hash map
 t_hashmap	*compression(int *num, int cnt);
 void		set_num(t_hashmap *hashmap, int *num, int cnt);
 void		set_hash(t_hashmap *hashmap, int cnt);
 void		reverse_sort(t_hashmap *hashmap, int cnt);
 void		swap_val(t_hashmap *hashmap, int i, int j, int flg);
+
+// make node
 t_node		*alloc_node(void);
 void		set_node(t_node *n, t_hashmap hash_val, t_node *prev, t_node *next);
 void		init_list(t_stack *list);
 void		create_blist(t_stack *b_list);
 void		list_add(t_stack *list, t_hashmap hash_val);
-void		short_sort2(t_stack *a_list);
-void		short_sort3(t_stack *a_list);
-void		short_sort3_head_sm(t_stack *a_list);
-void		short_sort3_head_md(t_stack *a_list);
-void		short_sort3_head_lg(t_stack *a_list);
+
+// short sort n = 2 or 3
+void		short_sort2_a(t_stack *a_list);
+void		short_sort3_a(t_stack *a_list);
+void		short_sort3_a_head_sm(t_stack *a_list);
+void		short_sort3_a_head_md(t_stack *a_list);
+void		short_sort3_a_head_lg(t_stack *a_list);
+void		short_sort2_b(t_stack *b_list);
+void		short_sort3_b(t_stack *b_list);
+void		short_sort3_b_head_sm(t_stack *b_list);
+void		short_sort3_b_head_md(t_stack *b_list);
+void		short_sort3_b_head_lg(t_stack *b_list);
+
+
+// normal sort 3 < n <= 6
 void		sort_normal(t_stack *a_list, t_stack *b_list, int a_size);
 void		pushes(t_stack *a_list, t_stack *b_list, const int size);
 void		judge_order(t_stack *a_list, t_stack *b_list, int i_search_hash);
 void		loop_rotate(t_stack *a_list, int i_hash, int flg);
+
+// quick sort n > 7
 void		sort_quick_a(t_stack *a_list, t_stack *b_list, int min, int max);
 void		judge_operation(t_stack *a_list, t_stack *b_list, int min, int max);
 void		move_btoa_head(t_stack *a_list, t_stack *b_list, int min, int max);
+void		move_btoa_tail(t_stack *a_list, t_stack *b_list);
+bool		check_sort_alist(t_stack *a_list);
+
+// node operation
 void		swap(t_stack *list);
 void		push(t_stack *fm_list, t_stack *to_list);
 void		rotate(t_stack *list);
 void		reverse(t_stack *list);
+
+// order
 void		sa(t_stack *list);
 void		pa(t_stack *a_list, t_stack *b_list);
 void		ra(t_stack *a_list);
