@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 11:16:32 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/16 14:44:40 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/16 16:33:29 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	sort_quick_a(t_stack *a_list, t_stack *b_list, int min, int max)
 {
 	int		cnt_bpush;
+	int		i_bigger;
 	t_node	*i_alist;
 
 	if (check_sort_alist(a_list))
@@ -31,7 +32,11 @@ void	sort_quick_a(t_stack *a_list, t_stack *b_list, int min, int max)
 	judge_blist(a_list, b_list, min, max / 2);
 	while (b_list->size < max - cnt_bpush)
 		pb(a_list, b_list);
-	judge_blist(a_list, b_list, max - cnt_bpush, max);
+	if (max % 2 == 0)
+		i_bigger = max - cnt_bpush + 1;
+	else
+		i_bigger = max - cnt_bpush;
+	judge_blist(a_list, b_list, i_bigger, max);
 }
 
 void	judge_blist(t_stack *a_list, t_stack *b_list, int min, int max)
