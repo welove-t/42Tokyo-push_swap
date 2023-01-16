@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 15:54:04 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/16 08:54:17 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/16 13:10:03 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ void	push(t_stack *fm_list, t_stack *to_list)
 	if (fm_list != NULL)
 	{
 		tmp = fm_list->head->next;
-		to_list->head->prev = fm_list->head;
 		if (to_list->size == 0)
 		{
 			fm_list->head->prev = NULL;
@@ -42,7 +41,10 @@ void	push(t_stack *fm_list, t_stack *to_list)
 			to_list->tail = fm_list->head;
 		}
 		else
+		{
+			to_list->head->prev = fm_list->head;
 			fm_list->head->next = to_list->head;
+		}
 		to_list->head = fm_list->head;
 		to_list->size += 1;
 		if (tmp == NULL)
