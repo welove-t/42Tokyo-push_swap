@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 12:56:00 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/14 08:47:57 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/16 08:57:51 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ void	set_hash(t_hashmap *hashmap, int cnt)
 				swap_val(hashmap, i, i + j, 0);
 			j++;
 		}
-		hashmap[i].hash_num = i;
+		hashmap[i].hash_num = i + 1;
 		i++;
 	}
 }

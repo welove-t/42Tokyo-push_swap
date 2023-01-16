@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/14 09:56:12 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/15 11:59:44 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/16 08:59:19 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	pushes(t_stack *a_list, t_stack *b_list, int a_cnt)
 {
 	int		i_search_hash;
 
-	i_search_hash = 0;
+	i_search_hash = 1;
 	while (a_cnt > 3)
 	{
 		judge_order(a_list, b_list, i_search_hash);
