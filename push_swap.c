@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/16 07:07:25 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/16 09:44:34 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	main(int argc, char **argv)
 	else if (argc <= 7)
 		sort_normal(&a_list, &b_list, a_list.size);
 	else
-		sort_quick_a(&a_list, &b_list, a_list.size);
+		sort_quick_a(&a_list, &b_list, 1, a_list.size);
 
 	// print
 	t_node *p;
@@ -73,21 +73,28 @@ int	main(int argc, char **argv)
 	printf("size:%d\n",a_list.size);
 
 	printf("===========b_list===========\n");
-	p = b_list.head;
-	while (p != NULL)
+	if (b_list.size != 0)
 	{
-		puts("----");
-		printf("main:%p\n", p);
-		printf("prev:%p\n", p->prev);
-		printf("hash:%d\n", p->hash);
-		printf("%d\n", p->num);
-		printf("next:%p\n", p->next);
-		p = p->next;
+		p = b_list.head;
+		while (p != NULL)
+		{
+			puts("----");
+			printf("main:%p\n", p);
+			printf("prev:%p\n", p->prev);
+			printf("hash:%d\n", p->hash);
+			printf("%d\n", p->num);
+			printf("next:%p\n", p->next);
+			p = p->next;
+		}
+		puts("--b_list--");
+		printf("head:%p\n", b_list.head);
+		printf("tail:%p\n", b_list.tail);
+		printf("size:%d\n",b_list.size);
 	}
-	puts("--b_list--");
-	printf("head:%p\n", b_list.head);
-	printf("tail:%p\n", b_list.tail);
-	printf("size:%d\n",b_list.size);
+	else
+	{
+		puts("b_list is null");
+	}
 	return (0);
 }
 
@@ -105,8 +112,12 @@ int	main(int argc, char **argv)
 
 9
 ./a.out 2 8 7 3 1 4 5 6 9
+
+10
 ./a.out 8 7 3 2 5 1 10 4 6 9
 
+15
+./a.out 8 7 3 13 15 1 14 2 11 12 4 9 10 5 6
 */
 
 

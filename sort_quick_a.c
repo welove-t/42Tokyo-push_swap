@@ -6,41 +6,51 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 11:16:32 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/16 07:17:49 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/16 09:56:26 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sort_quick_a(t_stack *a_list, t_stack *b_list, int max)
+void	sort_quick_a(t_stack *a_list, t_stack *b_list, int min, int max)
 {
 	int		cnt_bpush;
 	t_node	*i_alist;
 
-	cnt_bpush = max / 2;
+	cnt_bpush = max / 2;//7
 	while (b_list->size < cnt_bpush)
 	{
 		i_alist = a_list->head;
-		if (i_alist->hash < cnt_bpush)
+		if (i_alist->hash <= cnt_bpush)
 			pb(a_list, b_list);
 		else
 			ra(a_list);
 	}
-	move_btoa_head(a_list, b_list, cnt_bpush);
+	move_btoa_head(a_list, b_list, min, cnt_bpush);
 }
 
-void	move_btoa_head(t_stack *a_list, t_stack *b_list, int max)
+void	judge_operation(t_stack *a_list, t_stack *b_list, int min, int max)
+{
+	if (b_list->size > 3)
+		move_btoa_head(a_list, b_list, min, max);
+	else if (b_list->size == 3)
+		short_sort3(b_list);
+	else if (b_list->size == 2)
+		short_sort2(b_list);
+}
+
+void	move_btoa_head(t_stack *a_list, t_stack *b_list, int min, int max)
 {
 	int		cnt_apush;
 	int		i;
 	t_node	*i_blist;
 
-	cnt_apush = max / 2;
+	cnt_apush = b_list->size / 2;
 	i = 0;
 	while (i < cnt_apush)
 	{
 		i_blist = b_list->head;
-		if (i_blist->hash >= cnt_apush)
+		if ((min + max) / 2 < i_blist->hash && i_blist->hash <= max)
 		{
 			pa(a_list, b_list);
 			i++;
@@ -48,12 +58,7 @@ void	move_btoa_head(t_stack *a_list, t_stack *b_list, int max)
 		else
 			rb(b_list);
 	}
-	if (b_list->size > 3)
-		move_btoa_head(a_list, b_list, cnt_apush);
-	else if (b_list->size == 3)
-		short_sort3(b_list);
-	else if (b_list->size == 2)
-		short_sort2(b_list);
+	judge_operation(a_list, b_list, min, (min + max) / 2);
 }
 /*
 1. Aの数字をBに移動
