@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 14:59:36 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 08:18:12 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ typedef struct s_hashmap
 	size_t	hash_num;
 	size_t	idx;
 }	t_hashmap;
-
 
 // initialized
 t_stack		initial_alist(int argc, char **argv, size_t *args_size);
@@ -110,5 +109,6 @@ void		rrr(t_stack *a_list, t_stack *b_list);
 
 // end
 void		error_exit(void);
+void		free_str_array(char **array);
 
 #endif
