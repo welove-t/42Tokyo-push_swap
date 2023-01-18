@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 12:42:58 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/18 15:17:14 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,15 @@ int	main(int argc, char **argv)
 	create_blist(&b_list);
 
 	if (args_size < 2)
-		return 0;
+		return (0);
 	else if (args_size == 2)
 		short_sort2_a(&a_list);
 	else if (args_size == 3)
 		short_sort3_a(&a_list);
 	else if (args_size <= 6)
-		sort_normal(&a_list, &b_list, a_list.size);
+		sort_normal(&a_list, &b_list);
 	else
-		sort_quick_a(&a_list, &b_list, 1, a_list.size);
-
+		sort_quick(&a_list, &b_list);
 	return (0);
 }
 

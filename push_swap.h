@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 12:47:18 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/18 14:59:36 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 typedef struct s_node
 {
 	int				num;
-	int				hash;
+	size_t			hash;
 	struct s_node	*prev;
 	struct s_node	*next;
 }	t_node;
@@ -30,14 +30,14 @@ typedef struct s_stack
 {
 	t_node	*head;
 	t_node	*tail;
-	int		size;
+	size_t	size;
 }	t_stack;
 
 typedef struct s_hashmap
 {
-	int	main_num;
-	int	hash_num;
-	int	idx;
+	int		main_num;
+	size_t	hash_num;
+	size_t	idx;
 }	t_hashmap;
 
 
@@ -51,11 +51,11 @@ bool		check_args(char *str);
 bool		check_duplication(int *all_args, size_t args_size);
 
 // make hash map
-t_hashmap	*compression(int *num, int cnt);
-void		set_num(t_hashmap *hashmap, int *num, int cnt);
-void		set_hash(t_hashmap *hashmap, int cnt);
-void		reverse_sort(t_hashmap *hashmap, int cnt);
-void		swap_val(t_hashmap *hashmap, int i, int j, int flg);
+t_hashmap	*compression(int *num, size_t cnt);
+void		set_num(t_hashmap *hashmap, int *num, size_t cnt);
+void		set_hash(t_hashmap *hashmap, size_t cnt);
+void		reverse_sort(t_hashmap *hashmap, size_t cnt);
+void		swap_val(t_hashmap *hashmap, size_t i, size_t j, int flg);
 
 // make node
 t_node		*alloc_node(void);
@@ -77,18 +77,17 @@ void		short_sort3_b_head_md(t_stack *b_list);
 void		short_sort3_b_head_lg(t_stack *b_list);
 
 // normal sort 3 < n <= 6
-void		sort_normal(t_stack *a_list, t_stack *b_list, int a_size);
-void		pushes(t_stack *a_list, t_stack *b_list, const int size);
-void		judge_order(t_stack *a_list, t_stack *b_list, int i_search_hash);
-void		loop_rotate(t_stack *a_list, int i_hash, int flg);
+void		sort_normal(t_stack *a_list, t_stack *b_list);
+void		pushes(t_stack *a_list, t_stack *b_list);
+void		judge_order(t_stack *a_list, t_stack *b_list, size_t i_hash);
+void		loop_rotate(t_stack *a_list, size_t i_hash, int flg);
 
 // quick sort n > 7
-void		sort_quick_a(t_stack *a_list, t_stack *b_list, int min, int max);
-void		judge_blist(t_stack *a_list, t_stack *b_list, int min, int max);
-void		btoa_head(t_stack *a_list, t_stack *b_list, int min, int max);
-void		move_btoa_tail(t_stack *a_list, t_stack *b_list);
-bool		check_sort_alist(t_stack *a_list);
-void		reverse_b(t_stack *a_list, t_stack *b_list, int mn[], int cnt);
+void		sort_quick(t_stack *alst, t_stack *blst);
+void		judge_blst(t_stack *alst, t_stack *blst, size_t min, size_t max);
+void		btoa_head(t_stack *alst, t_stack *blst, size_t min, size_t max);
+void		move_btoa_tail(t_stack *alst, t_stack *blst);
+void		reverse_b(t_stack *alst, t_stack *blst, size_t mn[], size_t cnt);
 
 // node operation
 void		swap(t_stack *list);

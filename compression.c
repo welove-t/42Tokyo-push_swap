@@ -6,13 +6,13 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 12:56:00 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/16 08:57:51 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/18 14:57:01 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_hashmap	*compression(int *num, int cnt)
+t_hashmap	*compression(int *num, size_t cnt)
 {
 	t_hashmap	*hashmap;
 
@@ -25,9 +25,9 @@ t_hashmap	*compression(int *num, int cnt)
 	return (hashmap);
 }
 
-void	set_num(t_hashmap *hashmap, int *num, int cnt)
+void	set_num(t_hashmap *hashmap, int *num, size_t cnt)
 {
-	int	i;
+	size_t	i;
 
 	i = 0;
 	while (i < cnt)
@@ -38,10 +38,10 @@ void	set_num(t_hashmap *hashmap, int *num, int cnt)
 	}
 }
 
-void	set_hash(t_hashmap *hashmap, int cnt)
+void	set_hash(t_hashmap *hashmap, size_t cnt)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while (i < cnt)
@@ -58,10 +58,10 @@ void	set_hash(t_hashmap *hashmap, int cnt)
 	}
 }
 
-void	reverse_sort(t_hashmap *hashmap, int cnt)
+void	reverse_sort(t_hashmap *hashmap, size_t cnt)
 {
-	int	i;
-	int	j;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
 	while (i < cnt)
@@ -77,7 +77,7 @@ void	reverse_sort(t_hashmap *hashmap, int cnt)
 	}
 }
 
-void	swap_val(t_hashmap *hashmap, int i, int j, int flg)
+void	swap_val(t_hashmap *hashmap, size_t i, size_t j, int flg)
 {
 	t_hashmap	*tmp_hash;
 

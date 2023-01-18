@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 07:19:37 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 12:49:21 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/18 15:20:02 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_stack	initial_alist(int argc, char **argv, size_t *args_size)
 	set_num_list(argc, argv, all_args);
 	if (check_duplication(all_args, *args_size) == false)
 		error_exit();
-	hashes = compression(all_args, (int)*args_size);
+	hashes = compression(all_args, *args_size);
 	i = 0;
 	init_list(&a_list);
 	while (i < *args_size)
@@ -82,4 +82,3 @@ size_t	cnt_all_args(int cnt_args, char **argv)
 	}
 	return (cnt);
 }
-
