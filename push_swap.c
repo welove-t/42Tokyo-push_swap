@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 09:02:30 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/18 10:26:12 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv)
 	t_stack	b_list;
 	t_hashmap	*hashes;
 
-	initial_alist(argc - 1, argv, &a_list);
+	initial_alist(argc, argv, &a_list);
 	create_blist(&b_list);
 	i_arg = (int *)malloc(sizeof(int) * (argc - 1));
 	for (int j = 1; j < argc; j++)
