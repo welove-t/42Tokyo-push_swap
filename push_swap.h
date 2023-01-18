@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/19 08:18:12 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 08:47:02 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,5 +110,6 @@ void		rrr(t_stack *a_list, t_stack *b_list);
 // end
 void		error_exit(void);
 void		free_str_array(char **array);
+void		free_stack(t_stack *list);
 
 #endif
