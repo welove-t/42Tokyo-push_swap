@@ -6,7 +6,7 @@
 #    By: terabu <terabu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 11:27:29 by terabu            #+#    #+#              #
-#    Updated: 2023/01/18 09:03:29 by terabu           ###   ########.fr        #
+#    Updated: 2023/01/18 11:41:18 by terabu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,7 @@ CFLAGS := -Wall -Wextra -Werror
 NAME := push_swap
 SRCS := push_swap.c \
 		initialized.c \
+		check_arg.c \
 		order_a.c \
 		order_b.c \
 		order_d.c \

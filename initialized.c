@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 07:19:37 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 11:02:07 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/18 11:51:33 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,15 @@ void	set_num_list(int argc, char **argv, int *all_args)
 	while (i < argc)
 	{
 		args = ft_split(argv[i], ' ');
+		ft_printf("args:%s\n",args[0]);
 		i_args = 0;
 		while (args[i_args] != NULL)
 		{
-			// if (check_args(args[i]) == false)
-				// return (0);
+			if (check_args(args[i_args]) == false)
+			{
+				ft_printf("NG\n");
+				return ;
+			}
 			all_args[i_all_args] = ft_atoi(args[i_args]);
 			i_args++;
 			i_all_args++;
@@ -81,27 +85,3 @@ size_t	cnt_all_args(int cnt_args, char **argv)
 	return (cnt);
 }
 
-// void	set_alist(int *all_args, t_stack a_list)
-// {
-// }
-// bool	check_args(char *str)
-// {
-// 	size_t	start;
-// 	size_t	minus;
-
-// 	if (str == NULL)
-// 		return (false);
-// 	minus = 0;
-// 	if (*str == '-' || *str == '+')
-// 	{
-// 		if (*str == '-')
-// 			minus = 1;
-// 		str++;
-// 	}
-// 	while (*str)
-// 	{
-// 		if (ft_isdigit(*str) == 0)
-// 			return (false);
-// 	}
-// 	return (true);
-// }
