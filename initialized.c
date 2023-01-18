@@ -6,26 +6,31 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 07:19:37 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 10:27:06 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/18 11:02:07 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	*initial_alist(int argc, char **argv, t_stack *a_list)
+t_stack	initial_alist(int argc, char **argv, size_t *args_size)
 {
 	int			*all_args;
-	// t_hashmap	*hashes;
-	size_t		args_size;
+	t_stack		a_list;
+	size_t		i;
+	t_hashmap	*hashes;
 
-	args_size = cnt_all_args(argc - 1, argv);
-	init_list(a_list);
-	all_args = malloc(sizeof(int) * args_size);
+	*args_size = cnt_all_args(argc - 1, argv);
+	all_args = malloc(sizeof(int) * (*args_size));
 	set_num_list(argc, argv, all_args);
-	// ft_printf("size:%d\n", args_size);
-	// for (int j = 0; j < (int)args_size; j++)
-	// 	ft_printf("%d\n", all_args[j]);
-	return (NULL);
+	hashes = compression(all_args, (int)*args_size);
+	i = 0;
+	init_list(&a_list);
+	while (i < *args_size)
+	{
+		list_add(&a_list, hashes[i]);
+		i++;
+	}
+	return (a_list);
 }
 
 void	set_num_list(int argc, char **argv, int *all_args)
@@ -75,6 +80,10 @@ size_t	cnt_all_args(int cnt_args, char **argv)
 	}
 	return (cnt);
 }
+
+// void	set_alist(int *all_args, t_stack a_list)
+// {
+// }
 // bool	check_args(char *str)
 // {
 // 	size_t	start;
