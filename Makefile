@@ -6,13 +6,14 @@
 #    By: terabu <terabu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 11:27:29 by terabu            #+#    #+#              #
-#    Updated: 2023/01/18 13:35:21 by terabu           ###   ########.fr        #
+#    Updated: 2023/01/19 07:41:59 by terabu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC := cc
 CFLAGS := -Wall -Wextra -Werror
 NAME := push_swap
+LDFLAGS := -pthread
 SRCS := push_swap.c \
 		initialized.c \
 		check_arg.c \
@@ -27,15 +28,17 @@ SRCS := push_swap.c \
 		compression.c \
 		replace_node.c
 OBJS := $(SRCS:.c=.o)
+AFILE = ft_printf/libftprintf.a
 
+all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(MAKE) -C ./ft_printf
-	$(CC) $(CFLAGS) $(OBJS) ft_printf/libftprintf.a -o $(NAME)
-# cp ft_printf/libftprintf.a $(NAME)
-# ar rcs $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) $(AFILE) -o $(NAME)
 
-all: $(NAME)
+sani: $(OBJS)
+	$(CC) $(CFLAGS) -fsanitize=address $(OBJS) ${LDFLAGS} $(AFILE) -o $(NAME)
+
 clean:
 	rm -f $(OBJS)
 	$(MAKE) -C ./ft_printf clean
