@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/16 13:19:34 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/18 09:00:41 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,11 @@ typedef struct s_hashmap
 	int	hash_num;
 	int	idx;
 }	t_hashmap;
+
+
+// initialized
+int			*initial_alist(int cnt_arg, char **argv, t_stack *a_list);
+size_t		cnt_all_args(int cnt_args, char **argv);
 
 // make hash map
 t_hashmap	*compression(int *num, int cnt);
