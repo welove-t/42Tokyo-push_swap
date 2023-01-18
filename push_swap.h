@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 12:33:50 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/18 12:47:18 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include "ft_printf/ft_printf.h"
 # include <stdlib.h>
 # include <stdbool.h>
+# include <sysexits.h>
 
 typedef struct s_node
 {
@@ -75,7 +76,6 @@ void		short_sort3_b_head_sm(t_stack *b_list);
 void		short_sort3_b_head_md(t_stack *b_list);
 void		short_sort3_b_head_lg(t_stack *b_list);
 
-
 // normal sort 3 < n <= 6
 void		sort_normal(t_stack *a_list, t_stack *b_list, int a_size);
 void		pushes(t_stack *a_list, t_stack *b_list, const int size);
@@ -108,5 +108,8 @@ void		rrb(t_stack *b_list);
 void		ss(t_stack *a_list, t_stack *b_list);
 void		rr(t_stack *a_list, t_stack *b_list);
 void		rrr(t_stack *a_list, t_stack *b_list);
+
+// end
+void		error_exit(void);
 
 #endif

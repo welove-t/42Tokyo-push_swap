@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 07:19:37 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 12:35:38 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/18 12:49:21 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_stack	initial_alist(int argc, char **argv, size_t *args_size)
 	all_args = malloc(sizeof(int) * (*args_size));
 	set_num_list(argc, argv, all_args);
 	if (check_duplication(all_args, *args_size) == false)
-		ft_printf("dup\n");
+		error_exit();
 	hashes = compression(all_args, (int)*args_size);
 	i = 0;
 	init_list(&a_list);
@@ -47,15 +47,11 @@ void	set_num_list(int argc, char **argv, int *all_args)
 	while (i < argc)
 	{
 		args = ft_split(argv[i], ' ');
-		ft_printf("args:%s\n",args[0]);
 		i_args = 0;
 		while (args[i_args] != NULL)
 		{
 			if (check_args(args[i_args]) == false)
-			{
-				ft_printf("NG\n");
-				return ;
-			}
+				error_exit();
 			all_args[i_all_args] = ft_atoi(args[i_args]);
 			i_args++;
 			i_all_args++;

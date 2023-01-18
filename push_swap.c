@@ -6,13 +6,19 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 11:49:40 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/18 12:42:58 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 #include "push_swap.h"
 #include <unistd.h>
+
+void	error_exit(void)
+{
+	ft_printf("Error\n");
+	exit(EXIT_FAILURE);
+}
 
 int	main(int argc, char **argv)
 {
@@ -34,48 +40,6 @@ int	main(int argc, char **argv)
 	else
 		sort_quick_a(&a_list, &b_list, 1, a_list.size);
 
-	// print
-	// t_node *p;
-	// printf("===========a_list===========\n");
-	// p = a_list.head;
-	// while (p != NULL)
-	// {
-	// 	puts("----");
-	// 	printf("main:%p\n", p);
-	// 	printf("prev:%p\n", p->prev);
-	// 	printf("hash:%d\n", p->hash);
-	// 	printf("%d\n", p->num);
-	// 	printf("next:%p\n", p->next);
-	// 	p = p->next;
-	// }
-	// puts("--a_list--");
-	// printf("head:%p\n", a_list.head);
-	// printf("tail:%p\n", a_list.tail);
-	// printf("size:%d\n",a_list.size);
-
-	// printf("===========b_list===========\n");
-	// if (b_list.size != 0)
-	// {
-	// 	p = b_list.head;
-	// 	while (p != NULL)
-	// 	{
-	// 		puts("----");
-	// 		printf("main:%p\n", p);
-	// 		printf("prev:%p\n", p->prev);
-	// 		printf("hash:%d\n", p->hash);
-	// 		printf("%d\n", p->num);
-	// 		printf("next:%p\n", p->next);
-	// 		p = p->next;
-	// 	}
-	// 	puts("--b_list--");
-	// 	printf("head:%p\n", b_list.head);
-	// 	printf("tail:%p\n", b_list.tail);
-	// 	printf("size:%d\n",b_list.size);
-	// }
-	// else
-	// {
-	// 	puts("b_list is null");
-	// }
 	return (0);
 }
 
@@ -106,7 +70,7 @@ int	main(int argc, char **argv)
 
 // 途中でlistを確認する用
 
-		// print
+	// print
 	t_node *p;
 	printf("===========a_list===========\n");
 	p = a_list->head;
@@ -156,6 +120,51 @@ int	main(int argc, char **argv)
 		printf("idx:%d\n", hashes[j].idx);
 		puts("========");
 	}
+
+// 最後にリストを確認する用
+
+	// print
+	// t_node *p;
+	// printf("===========a_list===========\n");
+	// p = a_list.head;
+	// while (p != NULL)
+	// {
+	// 	puts("----");
+	// 	printf("main:%p\n", p);
+	// 	printf("prev:%p\n", p->prev);
+	// 	printf("hash:%d\n", p->hash);
+	// 	printf("%d\n", p->num);
+	// 	printf("next:%p\n", p->next);
+	// 	p = p->next;
+	// }
+	// puts("--a_list--");
+	// printf("head:%p\n", a_list.head);
+	// printf("tail:%p\n", a_list.tail);
+	// printf("size:%d\n",a_list.size);
+
+	// printf("===========b_list===========\n");
+	// if (b_list.size != 0)
+	// {
+	// 	p = b_list.head;
+	// 	while (p != NULL)
+	// 	{
+	// 		puts("----");
+	// 		printf("main:%p\n", p);
+	// 		printf("prev:%p\n", p->prev);
+	// 		printf("hash:%d\n", p->hash);
+	// 		printf("%d\n", p->num);
+	// 		printf("next:%p\n", p->next);
+	// 		p = p->next;
+	// 	}
+	// 	puts("--b_list--");
+	// 	printf("head:%p\n", b_list.head);
+	// 	printf("tail:%p\n", b_list.tail);
+	// 	printf("size:%d\n",b_list.size);
+	// }
+	// else
+	// {
+	// 	puts("b_list is null");
+	// }
 
 */
 
