@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 11:02:54 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/18 11:49:40 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,32 +16,20 @@
 
 int	main(int argc, char **argv)
 {
-	// int		i;
-	// t_hashmap	*hashes;
-	// int		*i_arg;
 	t_stack	a_list;
 	t_stack	b_list;
 	size_t	args_size;
 
 	a_list = initial_alist(argc, argv, &args_size);
 	create_blist(&b_list);
-	// i_arg = (int *)malloc(sizeof(int) * (argc - 1));
-	// for (int j = 1; j < argc; j++)
-	// 	i_arg[j - 1] = ft_atoi(argv[j]);
-	// hashes = compression(i_arg, argc - 1);
-	// i = 0;
-	// while (i < argc - 1)
-	// {
-	// 	list_add(&a_list, hashes[i]);
-	// 	i++;
-	// }
-	if (args_size <= 2)
+
+	if (args_size < 2)
 		return 0;
-	else if (args_size == 3)
+	else if (args_size == 2)
 		short_sort2_a(&a_list);
-	else if (args_size == 4)
+	else if (args_size == 3)
 		short_sort3_a(&a_list);
-	else if (args_size <= 7)
+	else if (args_size <= 6)
 		sort_normal(&a_list, &b_list, a_list.size);
 	else
 		sort_quick_a(&a_list, &b_list, 1, a_list.size);
