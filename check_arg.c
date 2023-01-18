@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 11:17:19 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 11:42:59 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/18 12:31:52 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,5 +49,25 @@ bool	check_args(char *str)
 	}
 	if (check_int(str, sign) == false)
 		return (false);
+	return (true);
+}
+
+bool	check_duplication(int *all_args, size_t args_size)
+{
+	size_t	i;
+	size_t	j;
+
+	i = 0;
+	while (i < args_size)
+	{
+		j = i + 1;
+		while (j < args_size)
+		{
+			if (all_args[i] == all_args[j])
+				return (false);
+			j++;
+		}
+		i++;
+	}
 	return (true);
 }
