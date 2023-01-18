@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 12:56:00 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 14:57:01 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 08:24:48 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,4 +94,5 @@ void	swap_val(t_hashmap *hashmap, size_t i, size_t j, int flg)
 		hashmap[i].hash_num = hashmap[j].hash_num;
 		hashmap[j].hash_num = tmp_hash->hash_num;
 	}
+	free(tmp_hash);
 }

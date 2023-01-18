@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 07:19:37 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 15:20:02 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 08:25:36 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 t_stack	initial_alist(int argc, char **argv, size_t *args_size)
 {
 	int			*all_args;
-	t_stack		a_list;
 	size_t		i;
+	t_stack		a_list;
 	t_hashmap	*hashes;
 
 	*args_size = cnt_all_args(argc - 1, argv);
@@ -25,6 +25,7 @@ t_stack	initial_alist(int argc, char **argv, size_t *args_size)
 	if (check_duplication(all_args, *args_size) == false)
 		error_exit();
 	hashes = compression(all_args, *args_size);
+	free(all_args);
 	i = 0;
 	init_list(&a_list);
 	while (i < *args_size)
@@ -32,6 +33,7 @@ t_stack	initial_alist(int argc, char **argv, size_t *args_size)
 		list_add(&a_list, hashes[i]);
 		i++;
 	}
+	free(hashes);
 	return (a_list);
 }
 
@@ -56,6 +58,7 @@ void	set_num_list(int argc, char **argv, int *all_args)
 			i_args++;
 			i_all_args++;
 		}
+		free_str_array(args);
 		i++;
 	}
 }
@@ -78,6 +81,7 @@ size_t	cnt_all_args(int cnt_args, char **argv)
 			i_args++;
 			cnt++;
 		}
+		free_str_array(args);
 		i++;
 	}
 	return (cnt);
