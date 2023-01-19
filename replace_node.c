@@ -6,11 +6,18 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 15:54:04 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/16 13:10:03 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 09:37:09 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	init_set_tolist(t_stack *fm_list, t_stack *to_list)
+{
+	fm_list->head->prev = NULL;
+	fm_list->head->next = NULL;
+	to_list->tail = fm_list->head;
+}
 
 void	swap(t_stack *list)
 {
@@ -35,11 +42,7 @@ void	push(t_stack *fm_list, t_stack *to_list)
 	{
 		tmp = fm_list->head->next;
 		if (to_list->size == 0)
-		{
-			fm_list->head->prev = NULL;
-			fm_list->head->next = NULL;
-			to_list->tail = fm_list->head;
-		}
+			init_set_tolist(fm_list, to_list);
 		else
 		{
 			to_list->head->prev = fm_list->head;
