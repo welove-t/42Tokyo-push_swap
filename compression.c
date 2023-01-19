@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/12 12:56:00 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/19 08:24:48 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 08:53:24 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_hashmap	*compression(int *num, size_t cnt)
 
 	hashmap = (t_hashmap *)malloc(sizeof(t_hashmap) * cnt);
 	if (hashmap == NULL)
-		return (NULL);
+		error_exit();
 	set_num(hashmap, num, cnt);
 	set_hash(hashmap, cnt);
 	reverse_sort(hashmap, cnt);
@@ -82,6 +82,8 @@ void	swap_val(t_hashmap *hashmap, size_t i, size_t j, int flg)
 	t_hashmap	*tmp_hash;
 
 	tmp_hash = (t_hashmap *)malloc(sizeof(t_hashmap));
+	if (tmp_hash == NULL)
+		error_exit();
 	tmp_hash->main_num = hashmap[i].main_num;
 	hashmap[i].main_num = hashmap[j].main_num;
 	hashmap[j].main_num = tmp_hash->main_num;

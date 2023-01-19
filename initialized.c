@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 07:19:37 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/19 08:25:36 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 08:53:58 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ t_stack	initial_alist(int argc, char **argv, size_t *args_size)
 
 	*args_size = cnt_all_args(argc - 1, argv);
 	all_args = malloc(sizeof(int) * (*args_size));
+	if (all_args == NULL)
+		error_exit();
 	set_num_list(argc, argv, all_args);
 	if (check_duplication(all_args, *args_size) == false)
 		error_exit();

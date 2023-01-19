@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 12:40:25 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/15 12:45:20 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 08:56:19 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,12 @@
 
 t_node	*alloc_node(void)
 {
-	return ((t_node *)malloc(sizeof(t_node)));
+	t_node	*node;
+
+	node = (t_node *)malloc(sizeof(t_node));
+	if (node == NULL)
+		error_exit();
+	return (node);
 }
 
 void	set_node(t_node *n, t_hashmap hash_val, t_node *prev, t_node *next)
