@@ -6,7 +6,7 @@
 #    By: terabu <terabu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 11:27:29 by terabu            #+#    #+#              #
-#    Updated: 2023/01/19 07:41:59 by terabu           ###   ########.fr        #
+#    Updated: 2023/01/19 09:11:44 by terabu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ NAME := push_swap
 LDFLAGS := -pthread
 SRCS := push_swap.c \
 		initialized.c \
-		check_arg.c \
+		check.c \
 		order_a.c \
 		order_b.c \
 		order_d.c \
@@ -26,7 +26,8 @@ SRCS := push_swap.c \
 		sort_normal.c \
 		sort_quick.c \
 		compression.c \
-		replace_node.c
+		replace_node.c \
+		free.c
 OBJS := $(SRCS:.c=.o)
 AFILE = ft_printf/libftprintf.a
 
