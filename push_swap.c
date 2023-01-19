@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/19 11:55:49 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 12:33:00 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,6 @@ int	main(int argc, char **argv)
 	else
 		sort_quick(&a_list, &b_list);
 	free_stack(&a_list);
-	free_stack(&b_list);
 	return (0);
 }
 
