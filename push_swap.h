@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/19 09:12:18 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 10:59:25 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,6 @@ void		swap_val(t_hashmap *hashmap, size_t i, size_t j, int flg);
 t_node		*alloc_node(void);
 void		set_node(t_node *n, t_hashmap hash_val, t_node *prev, t_node *next);
 void		init_list(t_stack *list);
-void		create_blist(t_stack *b_list);
 void		list_add(t_stack *list, t_hashmap hash_val);
 
 // short sort n = 2 or 3

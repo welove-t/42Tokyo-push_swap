@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/19 09:39:48 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 11:55:49 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	main(int argc, char **argv)
 		free_stack(&a_list);
 		return (0);
 	}
-	create_blist(&b_list);
 	if (args_size < 2)
 		return (0);
 	else if (args_size == 2)
@@ -47,6 +46,8 @@ int	main(int argc, char **argv)
 }
 
 /*
+system("leaks -q push_swap");
+
 // test case
 
 9
@@ -73,7 +74,6 @@ int	main(int argc, char **argv)
 
 // check list
 
-	// print
 	// t_node *p;
 	// printf("===========a_list===========\n");
 	// p = a_list.head;
@@ -82,7 +82,7 @@ int	main(int argc, char **argv)
 	// 	puts("----");
 	// 	printf("main:%p\n", p);
 	// 	printf("prev:%p\n", p->prev);
-	// 	printf("hash:%d\n", p->hash);
+	// 	printf("hash:%zu\n", p->hash);
 	// 	printf("%d\n", p->num);
 	// 	printf("next:%p\n", p->next);
 	// 	p = p->next;
@@ -90,7 +90,7 @@ int	main(int argc, char **argv)
 	// puts("--a_list--");
 	// printf("head:%p\n", a_list.head);
 	// printf("tail:%p\n", a_list.tail);
-	// printf("size:%d\n",a_list.size);
+	// printf("size:%zu\n",a_list.size);
 
 	// printf("===========b_list===========\n");
 	// if (b_list.size != 0)
@@ -101,7 +101,7 @@ int	main(int argc, char **argv)
 	// 		puts("----");
 	// 		printf("main:%p\n", p);
 	// 		printf("prev:%p\n", p->prev);
-	// 		printf("hash:%d\n", p->hash);
+	// 		printf("hash:%zu\n", p->hash);
 	// 		printf("%d\n", p->num);
 	// 		printf("next:%p\n", p->next);
 	// 		p = p->next;
@@ -109,12 +109,13 @@ int	main(int argc, char **argv)
 	// 	puts("--b_list--");
 	// 	printf("head:%p\n", b_list.head);
 	// 	printf("tail:%p\n", b_list.tail);
-	// 	printf("size:%d\n",b_list.size);
+	// 	printf("size:%zu\n",b_list.size);
 	// }
 	// else
 	// {
 	// 	puts("b_list is null");
 	// }
+	// system("leaks -q push_swap");
 
 */
 
