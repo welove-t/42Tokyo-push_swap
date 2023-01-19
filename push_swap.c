@@ -6,28 +6,11 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:49:53 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/19 09:05:01 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 09:11:54 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static bool	check_sort_alist(t_stack *a_list)
-{
-	t_node	*i_alist;
-	size_t	i_check;
-
-	i_alist = a_list->head;
-	i_check = 1;
-	while (i_alist != NULL)
-	{
-		if (i_alist->hash != i_check)
-			return (false);
-		i_check++;
-		i_alist = i_alist->next;
-	}
-	return (true);
-}
 
 void	error_exit(void)
 {

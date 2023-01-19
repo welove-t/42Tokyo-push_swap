@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/19 08:47:02 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 09:12:18 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,10 @@ size_t		cnt_all_args(int cnt_args, char **argv);
 void		set_num_list(int cnt_arg, char **argv, int *all_args);
 
 // check args
+bool		check_int(char *str, int sign);
 bool		check_args(char *str);
 bool		check_duplication(int *all_args, size_t args_size);
+bool		check_sort_alist(t_stack *a_list);
 
 // make hash map
 t_hashmap	*compression(int *num, size_t cnt);

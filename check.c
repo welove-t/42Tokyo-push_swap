@@ -1,18 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_arg.c                                        :+:      :+:    :+:   */
+/*   check.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 11:17:19 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/18 12:31:52 by terabu           ###   ########.fr       */
+/*   Updated: 2023/01/19 09:12:07 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static bool	check_int(char *str, int sign)
+bool	check_args(char *str)
+{
+	int		sign;
+
+	if (str == NULL)
+		return (false);
+	sign = 1;
+	if (*str == '-' || *str == '+')
+	{
+		if (*str == '-')
+			sign = -1;
+		str++;
+	}
+	if (check_int(str, sign) == false)
+		return (false);
+	return (true);
+}
+
+bool	check_int(char *str, int sign)
 {
 	long	num;
 
@@ -34,24 +52,6 @@ static bool	check_int(char *str, int sign)
 	return (true);
 }
 
-bool	check_args(char *str)
-{
-	int		sign;
-
-	if (str == NULL)
-		return (false);
-	sign = 1;
-	if (*str == '-' || *str == '+')
-	{
-		if (*str == '-')
-			sign = -1;
-		str++;
-	}
-	if (check_int(str, sign) == false)
-		return (false);
-	return (true);
-}
-
 bool	check_duplication(int *all_args, size_t args_size)
 {
 	size_t	i;
@@ -68,6 +68,23 @@ bool	check_duplication(int *all_args, size_t args_size)
 			j++;
 		}
 		i++;
+	}
+	return (true);
+}
+
+bool	check_sort_alist(t_stack *a_list)
+{
+	t_node	*i_alist;
+	size_t	i_check;
+
+	i_alist = a_list->head;
+	i_check = 1;
+	while (i_alist != NULL)
+	{
+		if (i_alist->hash != i_check)
+			return (false);
+		i_check++;
+		i_alist = i_alist->next;
 	}
 	return (true);
 }
