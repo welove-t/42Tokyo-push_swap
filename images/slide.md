@@ -111,7 +111,7 @@ push操作の場合
 
 <!-- slide -->
 
-実装イメージ
+### 実装イメージ
 @import "singly2.svg" {width="1000px" height="400px"}
 
 <!-- slide -->
