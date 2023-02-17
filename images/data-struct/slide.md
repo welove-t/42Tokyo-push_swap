@@ -20,6 +20,26 @@ presentation:
 ### [各種命令](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
 
 <!-- slide -->
+### データ構造とは？
+
+<!-- slide -->
+### データ構造
+データの格納形式
+<br>
+〜種類〜
+配列、連結リスト、スタック・キュー、ツリー
+
+<!-- slide -->
+### アルゴリズム
+問題解決の処理手順
+<br>
+〜種類〜
+＜探索系＞
+リニアサーチ、バイナリサーチ
+<br>
+＜ソート系＞
+バブルソート、挿入ソート、クイックソート
+<!-- slide -->
 
 ### 今回考えたいデータ構造
 
@@ -97,8 +117,14 @@ push 操作の例
 @import "array3.svg" {width="1000px" height="400px"}
 
 <!-- slide -->
+配列の場合
+push / rotate 操作で
+LOOPが発生する！
+
+<!-- slide -->
 
 ### 2️⃣ 単方向リスト
+
 
 <!-- slide -->
 
@@ -142,6 +168,11 @@ rotate 操作で
 
 rotate 操作
 @import "singly5.svg" {width="1000px" height="400px"}
+
+<!-- slide -->
+単方向リストの場合
+rotate 操作で
+LOOPが発生する！
 
 <!-- slide -->
 
@@ -192,7 +223,12 @@ LOOP が発生しない！
 
 ### 結論
 
-"回転するスタック領域"においては双方向リストがベスト
+(この課題においてはデータ構造は
+あまり意識しなくても良いけど...)
+"回転するスタック領域"では双方向リストがベスト
+
+<!-- slide -->
+補足・ご指摘あればお願いします！
 
 <!-- slide -->
 
