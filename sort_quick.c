@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 11:16:32 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/19 09:40:46 by terabu           ###   ########.fr       */
+/*   Updated: 2023/02/23 12:53:53 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,12 @@ void	judge_blst(t_stack *alst, t_stack *blst, size_t min, size_t max)
 	else if (blst->size == 3)
 	{
 		short_sort3_b(blst);
-		move_btoa_tail(alst, blst);
+		btoa_tail(alst, blst);
 	}
 	else if (blst->size == 2)
 	{
 		short_sort2_b(blst);
-		move_btoa_tail(alst, blst);
+		btoa_tail(alst, blst);
 	}
 }
 
@@ -59,7 +59,6 @@ void	btoa_head(t_stack *alst, t_stack *blst, size_t min, size_t max)
 {
 	size_t		cnt_apush;
 	size_t		i;
-	size_t		min_max[2];
 	t_node		*i_blist;
 
 	cnt_apush = blst->size / 2;
@@ -77,12 +76,11 @@ void	btoa_head(t_stack *alst, t_stack *blst, size_t min, size_t max)
 			rb(blst);
 	}
 	judge_blst(alst, blst, min, (min + max) / 2);
-	min_max[0] = min;
-	min_max[1] = max;
-	reverse_b(alst, blst, min_max, cnt_apush);
+	atob_reverse(alst, blst, cnt_apush);
+	judge_blst(alst, blst, max - cnt_apush + 1, max);
 }
 
-void	move_btoa_tail(t_stack *alst, t_stack *blst)
+void	btoa_tail(t_stack *alst, t_stack *blst)
 {
 	while (blst->size != 0)
 	{
@@ -91,7 +89,7 @@ void	move_btoa_tail(t_stack *alst, t_stack *blst)
 	}
 }
 
-void	reverse_b(t_stack *alst, t_stack *blst, size_t mn[], size_t cnt)
+void	atob_reverse(t_stack *alst, t_stack *blst, size_t cnt)
 {
 	size_t	i;
 
@@ -101,5 +99,4 @@ void	reverse_b(t_stack *alst, t_stack *blst, size_t mn[], size_t cnt)
 		pb(alst, blst);
 		i++;
 	}
-	judge_blst(alst, blst, mn[1] - cnt + 1, mn[1]);
 }

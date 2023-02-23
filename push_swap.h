@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 11:31:30 by terabu            #+#    #+#             */
-/*   Updated: 2023/01/19 10:59:25 by terabu           ###   ########.fr       */
+/*   Updated: 2023/02/23 12:51:25 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,8 @@ void		loop_rotate(t_stack *a_list, size_t i_hash, int flg);
 void		sort_quick(t_stack *alst, t_stack *blst);
 void		judge_blst(t_stack *alst, t_stack *blst, size_t min, size_t max);
 void		btoa_head(t_stack *alst, t_stack *blst, size_t min, size_t max);
-void		move_btoa_tail(t_stack *alst, t_stack *blst);
-void		reverse_b(t_stack *alst, t_stack *blst, size_t mn[], size_t cnt);
+void		btoa_tail(t_stack *alst, t_stack *blst);
+void		atob_reverse(t_stack *alst, t_stack *blst, size_t cnt);
 
 // node operation
 void		swap(t_stack *list);
