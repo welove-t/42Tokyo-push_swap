@@ -233,3 +233,15 @@ LOOP が発生しない！
 <!-- slide -->
 
 ありがとうございました 😊
+
+<style>
+.slide{
+  background-color:#FFFFEE;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+h2 {
+  font-size: 800px;
+}
+</style>
