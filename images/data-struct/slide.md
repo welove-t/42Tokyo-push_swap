@@ -1,47 +1,42 @@
 ---
 presentation:
-  width: 800
-  height: 600
+  # width: 800
+  # height: 600
   theme: beige.css
 ---
 
-<!-- slide -->
-
-## push_swap で考える<br>データ構造
-
-<!-- slide -->
-
-### push_swap <br>ってどんな課題？
-
-<!-- slide -->
-
-### [push_swap を 理解するためのスライド](https://docs.google.com/presentation/d/1c2PU6ZST7uMwNHl6aAz2WsJ5QFf1J7JJsMkW0VSTXc8/edit#slide=id.p)
-
-### [各種命令](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
-
-<!-- slide -->
-### データ構造とは？
+<style>
+.slide{
+  background-color: #FFFFEE;
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 20px;
+}
+</style>
 
 <!-- slide -->
-### データ構造
-データの格納形式
-<br>
-〜種類〜
-配列、連結リスト、スタック・キュー、ツリー
+
+### push_swap で考える<br>データ構造
 
 <!-- slide -->
-### アルゴリズム
-問題解決の処理手順
-<br>
-〜種類〜
-＜探索系＞
-リニアサーチ、バイナリサーチ
-<br>
-＜ソート系＞
-バブルソート、挿入ソート、クイックソート
+
+push_swap <br>ってどんな課題？
+
 <!-- slide -->
 
-### 今回考えたいデータ構造
+[push_swap を 理解するためのスライド](https://docs.google.com/presentation/d/1c2PU6ZST7uMwNHl6aAz2WsJ5QFf1J7JJsMkW0VSTXc8/edit#slide=id.p)
+<br/>
+[各種命令](https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a)
+
+<!-- slide -->
+
+今回考えたいデータ構造
 
 1. 配列
 2. 単方向リスト
@@ -49,7 +44,7 @@ presentation:
 
 <!-- slide -->
 
-## 結論
+結論
 
 <!-- slide -->
 
@@ -62,7 +57,7 @@ presentation:
 
 <!-- slide -->
 
-### 影響度
+影響度
 
 |              | 処理速度 | 命令数 |
 | ------------ | -------- | ------ |
@@ -82,13 +77,13 @@ presentation:
 
 <!-- slide -->
 
-### 前提
+前提
 
 処理が速い　＝　 LOOP が少ない
 
 <!-- slide -->
 
-## 1️⃣ 配列
+1️⃣ 配列
 
 <!-- slide class"left"-->
 
@@ -104,7 +99,7 @@ presentation:
 
 <!-- slide -->
 
-### 配列のマイナス点
+配列のマイナス点
 
 <!-- slide -->
 
@@ -117,31 +112,31 @@ push 操作の例
 @import "array3.svg" {width="1000px" height="400px"}
 
 <!-- slide -->
+
 配列の場合
 push / rotate 操作で
-LOOPが発生する！
+LOOP が発生する！
 
 <!-- slide -->
 
-### 2️⃣ 単方向リスト
-
+2️⃣ 単方向リスト
 
 <!-- slide -->
 
-### 単方向リストとは
+単方向リストとは
 
 先頭から末尾まで要素が数珠繋ぎに並んでいる
-@import "singly1.svg" {width="1000px" height="400px"}
+@import "singly1.svg" {width="800px" height="400px"}
 
 <!-- slide -->
 
 実装イメージ
 
-@import "singly2.svg" {width="1000px" height="480px"}
+@import "singly2.svg" {width="1200px" height="480px"}
 
 <!-- slide -->
 
-### 配列と比較して
+配列と比較して
 
 リストでは値の移動は発生しない
 
@@ -157,7 +152,7 @@ push 後
 
 <!-- slide -->
 
-### 単方向リストの問題点
+単方向リストの問題点
 
 <!-- slide -->
 
@@ -167,35 +162,36 @@ rotate 操作で
 <!-- slide -->
 
 rotate 操作
-@import "singly5.svg" {width="1000px" height="400px"}
+@import "singly5.svg" {width="1200px" height="400px"}
 
 <!-- slide -->
+
 単方向リストの場合
 rotate 操作で
-LOOPが発生する！
+LOOP が発生する！
 
 <!-- slide -->
 
-### 配列とリスト<br>それぞれのマイナスポイント
+配列とリスト<br>それぞれのマイナスポイント
 
 <!-- slide -->
 
-### 配列
+配列
 
 挿入時に全移動が発生
 <br>
 
-### リスト
+リスト
 
 要素へのアクセスが遅い
 
 <!-- slide -->
 
-### 3️⃣ 双方向リスト
+3️⃣ 双方向リスト
 
 <!-- slide -->
 
-### 双方向リストとは
+双方向リストとは
 
 単方向リストに先行ノードのポインタを加えたもの
 @import "linear1.svg" {width="1000px" height="400px"}
@@ -203,12 +199,12 @@ LOOPが発生する！
 <!-- slide -->
 
 実装イメージ
-@import "linear2.svg" {width="1000px" height="480px"}
+@import "linear2.svg" {width="1200px" height="480px"}
 
 <!-- slide -->
 
 rotate 操作
-@import "linear3.svg" {width="1000px" height="480px"}
+@import "linear3.svg" {width="1200px" height="480px"}
 
 <!-- slide -->
 
@@ -221,27 +217,16 @@ LOOP が発生しない！
 
 <!-- slide -->
 
-### 結論
+結論
 
 (この課題においてはデータ構造は
 あまり意識しなくても良いけど...)
 "回転するスタック領域"では双方向リストがベスト
 
 <!-- slide -->
+
 補足・ご指摘あればお願いします！
 
 <!-- slide -->
 
 ありがとうございました 😊
-
-<style>
-.slide{
-  background-color:#FFFFEE;
-  width: 100%;
-  padding: 0px;
-  margin: 0px;
-}
-h2 {
-  font-size: 800px;
-}
-</style>
