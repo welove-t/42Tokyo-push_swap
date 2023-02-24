@@ -183,9 +183,8 @@ push_swapで考える分割統治法(再帰)
 
 <!-- slide -->
 ### 簡易フローチャート
-「push_swap を 理解するためのスライド」p22
 <br/>
-@import "qsort-flow.svg" {width="1200px" height="440px"}
+@import "qsort-flow.svg" {width="1200px" height="480px"}
 
 
 <!-- slide -->
@@ -199,35 +198,31 @@ push_swapで考える分割統治法(再帰)
 
 <!-- slide -->
 まずは分割する
-<br>
-@import "qsort-div_start.svg" {width="1200px" height="560px"}
+@import "qsort-div_start.svg" {width="1000px" height="520px"}
 
 <!-- slide -->
-１・２・３をソートして確定
-<br>
-@import "qsort-div123.svg" {width="1200px" height="560px"}
+１ ２ ３をソートして確定
+@import "qsort-div123.svg" {width="1200px" height="520px"}
 
 <!-- slide -->
-４・５をソートして確定
-<br>
-@import "qsort-div123.svg" {width="1200px" height="560px"}
+４ ５をソートして確定
+
+@import "qsort-div45.svg" {width="1000px" height="400px"}
 
 <!-- slide -->
-６・７をソートして確定
-<br>
-@import "qsort-div123.svg" {width="1200px" height="560px"}
+６ ７をソートして確定
 
+@import "qsort-div67.svg" {width="1000px" height="400px"}
 <!-- slide -->
-８・９をソートして確定
-<br>
-@import "qsort-div123.svg" {width="1200px" height="560px"}
+８ ９をソートして確定
 
+@import "qsort-div89.svg" {width="1000px" height="400px"}
 
 <!-- slide -->
 
  3️⃣ 機能ごとに整理しよう！
 <!-- slide -->
-@import "normal.svg" {width="1600px" height="560px"}
+@import "qsort-func.svg" {width="1600px" height="560px"}
 
 <!-- slide -->
 ポイントは？
@@ -249,16 +244,22 @@ push_swapで考える分割統治法(再帰)
 再帰のおさらい
 <!-- slide -->
 再帰関数の例
+<style>
+  .div{
+    display:flex;
+}
+</style>
+<!-- div -->
 @import "recursive.c"
 @import "qsort-recur_standard.svg" {width="600px" height="240px"}
-
+<!-- div -->
 <!-- slide -->
 ・B -> Aと　 =>を１つの関数におけば
 
 <!-- slide -->
 4️⃣ 再帰＆パラメーターに注目しよう！
 <!-- slide -->
-@import "qsort-recur_btoa.svg" {width="1200px" height="600px"}
+@import "qsort-recur_btoa.svg" {width="1200px" height="560px"}
 <!-- slide -->
 
 5️⃣ （時間があれば）コードを見てみよう！
