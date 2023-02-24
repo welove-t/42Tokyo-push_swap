@@ -183,41 +183,107 @@ push_swapで考える分割統治法(再帰)
 
 <!-- slide -->
 ### 簡易フローチャート
-@import "qsort-flow.svg" {width="1200px" height="400px"}
 「push_swap を 理解するためのスライド」p22
+<br/>
+@import "qsort-flow.svg" {width="1200px" height="440px"}
+
 
 <!-- slide -->
-
+ 2️⃣ 具体的な値で試してみよう！
 
 <!-- slide -->
-## 2. 具体的な値で試してみよう！
+分割の条件
+
+- 分割できる：Bが４つ以上の時
+- 分割できない：Bが３つ以下の時
 
 <!-- slide -->
 まずは分割する
 <br>
-@import "qsort-start.svg" {width="1200px" height="560px"}
+@import "qsort-div_start.svg" {width="1200px" height="560px"}
 
 <!-- slide -->
-まずは分割する
+１・２・３をソートして確定
 <br>
-@import "div-12.svg" {width="1200px" height="560px"}
+@import "qsort-div123.svg" {width="1200px" height="560px"}
+
+<!-- slide -->
+４・５をソートして確定
+<br>
+@import "qsort-div123.svg" {width="1200px" height="560px"}
+
+<!-- slide -->
+６・７をソートして確定
+<br>
+@import "qsort-div123.svg" {width="1200px" height="560px"}
+
+<!-- slide -->
+８・９をソートして確定
+<br>
+@import "qsort-div123.svg" {width="1200px" height="560px"}
 
 
 <!-- slide -->
 
+ 3️⃣ 機能ごとに整理しよう！
+<!-- slide -->
 @import "normal.svg" {width="1600px" height="560px"}
 
+<!-- slide -->
+ポイントは？
 
-
 <!-- slide -->
+解決方法
+1. 再帰関数
+2. スタック領域
 <!-- slide -->
+今回は再帰関数で考えます
 <!-- slide -->
+ところで皆さん...
 <!-- slide -->
+再帰関数は苦手ですか？
 <!-- slide -->
-<!-- slide -->
+🙋‍♂️
 
 <!-- slide -->
 再帰のおさらい
 <!-- slide -->
-
+再帰関数の例
 @import "recursive.c"
+@import "qsort-recur_standard.svg" {width="600px" height="240px"}
+
+<!-- slide -->
+・B -> Aと　 =>を１つの関数におけば
+
+<!-- slide -->
+4️⃣ 再帰＆パラメーターに注目しよう！
+<!-- slide -->
+@import "qsort-recur_btoa.svg" {width="1200px" height="600px"}
+<!-- slide -->
+
+5️⃣ （時間があれば）コードを見てみよう！
+<!-- slide -->
+
+<!-- slide -->
+
+<!-- slide -->
+
+<!-- slide -->
+
+<!-- slide -->
+
+<!-- slide -->
+
+<!-- slide -->
+
+<!-- slide -->
+
+<!-- slide -->
+
+<!-- slide -->
+
+<!-- slide -->
+
+<!-- slide -->
+
+<!-- slide -->
