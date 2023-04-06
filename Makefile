@@ -6,7 +6,7 @@
 #    By: terabu <terabu@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/07 11:27:29 by terabu            #+#    #+#              #
-#    Updated: 2023/01/19 09:11:44 by terabu           ###   ########.fr        #
+#    Updated: 2023/04/06 08:06:56 by terabu           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,6 +27,7 @@ SRCS := push_swap.c \
 		sort_quick.c \
 		compression.c \
 		replace_node.c \
+		sort_quick_short_alist.c \
 		free.c
 OBJS := $(SRCS:.c=.o)
 AFILE = ft_printf/libftprintf.a

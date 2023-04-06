@@ -6,7 +6,7 @@
 /*   By: terabu <terabu@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/15 11:16:32 by terabu            #+#    #+#             */
-/*   Updated: 2023/02/23 12:53:53 by terabu           ###   ########.fr       */
+/*   Updated: 2023/04/06 08:06:13 by terabu           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void	btoa_head(t_stack *alst, t_stack *blst, size_t min, size_t max)
 			rb(blst);
 	}
 	judge_blst(alst, blst, min, (min + max) / 2);
+	if (sort_quick_short_alist(alst, blst, cnt_apush))
+		return ;
 	atob_reverse(alst, blst, cnt_apush);
 	judge_blst(alst, blst, max - cnt_apush + 1, max);
 }
